@@ -28,4 +28,9 @@ public class CompanyWorkerController {
     public void addNewCompanyWorker(@RequestBody CompanyWorker companyWorker) {
         companyWorkerService.insertCompanyWorker(companyWorker);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteCompanyWorker(@PathVariable Integer id) {
+        companyWorkerService.deleteCompanyWorkerById(id);
+    }
 }

@@ -21,4 +21,8 @@ public class CompanyWorkerService {
     public void insertCompanyWorker(CompanyWorker companyWorker) {
         companyWorkerRepository.save(companyWorker);
     }
+
+    public void deleteCompanyWorkerById(Integer id) {
+        companyWorkerRepository.deleteById(id);
+    }
 }
