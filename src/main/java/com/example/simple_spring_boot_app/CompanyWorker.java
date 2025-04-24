@@ -1,8 +1,13 @@
 package com.example.simple_spring_boot_app;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.util.Objects;
 
+@Entity
 public class CompanyWorker {
+    @Id
     private Integer id;
     private String name;
     private String department;

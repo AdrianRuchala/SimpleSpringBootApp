@@ -10,11 +10,14 @@ import java.util.List;
 @RequestMapping("api/v1/company-workers")
 public class CompanyWorkerController {
 
+    public final CompanyWorkerService companyWorkerService;
+
+    public CompanyWorkerController(CompanyWorkerService companyWorkerService){
+        this.companyWorkerService = companyWorkerService;
+    }
+
     @GetMapping
-    public List<CompanyWorker> getCompanyWorkers() {
-        return List.of(
-                new CompanyWorker(1, "Jan Kowalski", "Finance"),
-                new CompanyWorker(2, "Marek Nowak", "Legal")
-        );
+    public List<CompanyWorker> getAllCompanyWorkers() {
+        return companyWorkerService.getAllCompanyWorkers();
     }
 }
