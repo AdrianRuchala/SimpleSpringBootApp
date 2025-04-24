@@ -14,4 +14,11 @@ public class CompanyWorkerService {
     public List<CompanyWorker> getAllCompanyWorkers() {
         return companyWorkerRepository.findAll();
     }
+    public CompanyWorker getCompanyWorkerById(Integer id) {
+        return companyWorkerRepository.findById(id).orElseThrow(() -> new IllegalStateException(id + " not found"));
+    }
+
+    public void insertCompanyWorker(CompanyWorker companyWorker) {
+        companyWorkerRepository.save(companyWorker);
+    }
 }
